@@ -1,0 +1,27 @@
+{% extends 'base/dashboard_base.html' %}
+{% load static %}   
+  {% block content %}
+    <h1>Today's Schedule Detials Page</h1>
+    <table>
+        <tr>
+            <th>Sr no</th>
+            <th>Doctor Name</th>
+            <th>Date Of Meeting</th>
+            <th>Time</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ appointment.doctor.name }}</td>
+            <td>{{ appointment.date_of_schedule }}</td>
+            <td>{{ appointment.time_of_schedule }}</td>
+        </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4" class="no-appointments">No appointments scheduled for the selected date.</td>
+            </tr>
+        {% endfor %}
+        
+    </table><br/>
+   <div> <a href="{% url 'dashboard-page' %}" style="text-align: center; color: black;"><h3>Return To dashboard page</h3></a></div>
+  {% endblock content %}

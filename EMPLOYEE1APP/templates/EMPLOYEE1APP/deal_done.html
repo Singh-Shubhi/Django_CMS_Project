@@ -1,0 +1,63 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deal Done Successfully</title>
+    <style>
+        body {
+            /* Use a valid background image URL */
+            /* background-image: url(/static/images/bg5.webp); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
+            
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        
+        .action-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: darkcyan;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h1 style="color: darkcyan;">Deal Done Successfully</h1>
+        <p style="color: darkcyan;">Your deal has been done successfully.</p>
+        <a class="action-link" href="{% url 'deals-details' %}">Add Another Deal</a>
+        <a class="action-link" href="{% url 'dashboard-page' %}">Return to Dashboard</a>
+    </div>
+    
+</body>
+
+</html>
+{% endblock %}
+{% include 'base/footer.html' %}

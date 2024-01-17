@@ -1,0 +1,26 @@
+{% load static %}
+<aside class="left-sidebar" data-sidebarbg="skin5">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="p-t-30">
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard-page' %}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'product-page' %}" aria-expanded="false"><i class="mdi mdi-package-variant-closed"></i><span class="hide-menu">Add Product</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'views-products' %}" aria-expanded="false"><i class="mdi mdi-eye-outline"></i><span class="hide-menu">View All Product</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'add-doctors' %}" aria-expanded="false"><i class="mdi mdi-stethoscope"></i><span class="hide-menu">Add Doctor</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'appointment-page' %}" aria-expanded="false"><i class="mdi mdi-calendar-clock"></i><span class="hide-menu">Schedule Doctor Appointment</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'today-schedule' %}" aria-expanded="false"><i class="mdi mdi-calendar-today"></i><span class="hide-menu">Today's Schedule</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'deals-details' %}" aria-expanded="false"><i class="mdi mdi-check-circle"></i><span class="hide-menu">Deals Deatails</span></a></li><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'login-page' %}?logout=true" aria-expanded="false"><i class="mdi mdi-logout"></i><span class="hide-menu"><h4 style="color: white;">Logout</span></h4></a></li>
+                </li>
+               
+                </li>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+    
+</aside>

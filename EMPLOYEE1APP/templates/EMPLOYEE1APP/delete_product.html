@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: white;
+            background-color:black;
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color:black;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>PRODUCTS DETAILS</h1>
+    <div class="container">
+        <form action="#" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="product_name">Product Name:</label>
+                {{ product.product_name }}
+            </div>
+            <div class="form-group">
+                <label for="product_company">Product Company Name:</label>
+                {{ product.company_name }}
+            </div>
+            <div class="form-group">
+                <label for="product_image">Product Image:</label>
+                {{ product.product_image }}
+            </div>
+            <div class="form-group">
+                <label for="product_price">Product Price:</label>
+                {{ product.product_price }}
+                {% if form.errors %}
+                    <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="entered_by">Entered By:</label>
+                {{ product.entered_by }}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete">
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base/dashboard_base.html' %}
+{% load static %}   
+  {% block content %}
+    <h1>ADD DOCTORS</h1>
+    
+    <div class="container">
+        
+        <form action="#" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <div class="form-group">
+                <label for="name">Doctor Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="specialisation">Specialisation:</label>
+                {{ form.specialisation }}
+            </div>
+            <div class="form-group">
+                <label for="contact_number">Contact_Number:</label>
+                {{ form.contact_number }}
+               
+                {% if messages %}
+                    <div class="message-container">
+                        <span class="close-button" onclick="closeMessage()"></span> 
+                    {% for message in messages %}
+                        <div class="message">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                 </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                {{ form.location }}
+            </div>
+            <div class="form-group">
+                <label for="entered_by">Entered By:</label>
+                {{ form.entered_by }}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+  {% endblock content %}
